@@ -2,6 +2,7 @@ const staticDevCoffee = "misitio"
 const assets = [
   "/",
   "/index.html",
+  "/index-offline.html",
   "/css/style.css",
   "/js/app.js",
   "/icon-512x512.png",
@@ -14,10 +15,16 @@ self.addEventListener("install", installEvent => {
     })
   )
 })
-self.addEventListener("fetch", fetchEvent => {
-    fetchEvent.respondWith(
-      caches.match(fetchEvent.request).then(res => {
-        return res || fetch(fetchEvent.request)
-      })
-    )
-  })
+self.addEventListener("fetch", function(event) {
+  event.respondWith(
+    fetch(event.request).catch(function() {
+      return caches.match(event.request).then(function(response) {
+        if (response) {
+          return response;
+        } else if (event.request.headers.get("accept").includes("text/html")) {
+          return caches.match("/index-offline.html");
+        }
+      });
+    })
+  );
+});
