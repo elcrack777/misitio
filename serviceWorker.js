@@ -1,7 +1,6 @@
 const staticDevCoffee = "misitio"
 const assets = [
   "/",
-  "/index.html",
   "/index-offline.html",
   "/css/style.css",
   "/js/app.js",
