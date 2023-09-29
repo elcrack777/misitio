@@ -1,10 +1,10 @@
 const staticDevCoffee = "misitio"
 const assets = [
   "/",
-  "/src/index.html",
-  "/src/css/style.css",
-  "/src/js/app.js",
-  "/src/icon-512x512.png",
+  "/index.html",
+  "/css/style.css",
+  "/js/app.js",
+  "/icon-512x512.png",
 ]
 
 self.addEventListener("install", installEvent => {
