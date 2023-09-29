@@ -1,7 +1,7 @@
 {
     "name": "Mi sitio",
     "short_name": "misitio",
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#fdfdfd",
     "theme_color": "#db4938",
@@ -9,7 +9,7 @@
     "scope": "./",
     "icons": [
       {
-        "src": "icon-512x512.png",
+        "src": "/icon-512x512.png",
         "type": "image/png", 
         "sizes": "512x512"
       }
