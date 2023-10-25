@@ -31,7 +31,7 @@ self.addEventListener("fetch", function(event) {
   event.respondWith(
     fetch(event.request).catch(function() {
       console.log('fallado el cargado');
-      return caches.match("/pages/index-offline.html");
+      return caches.match("pages/index-offline.html");
     })
   );
 });
