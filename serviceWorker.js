@@ -1,4 +1,4 @@
-var url =  window.location.href;
+/* var url =  window.location.href;
 var swLocation = '/misitio/serviceWorker.js'
 
 if( navigator.serviceWorker) {
@@ -7,7 +7,11 @@ if( navigator.serviceWorker) {
   }
   navigator.serviceWorker.register( swlocation);
 }
+ */
 
+if( navigator.serviceWorker) {
+  navigator.serviceWorker.register( '/serviceWorker.js' );
+}
 const staticDevCoffee = "misitio"
 const assets = [
   "/",
@@ -31,7 +35,7 @@ self.addEventListener("fetch", function(event) {
   event.respondWith(
     fetch(event.request).catch(function() {
       console.log('fallado el cargado');
-      return caches.match("pages/index-offline.html");
+      return caches.match("/pages/index-offline.html");
     })
   );
 });
