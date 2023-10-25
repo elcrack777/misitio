@@ -1,4 +1,4 @@
-/* var url =  window.location.href;
+var url =  window.location.href;
 var swLocation = '/misitio/serviceWorker.js'
 
 if( navigator.serviceWorker) {
@@ -7,14 +7,14 @@ if( navigator.serviceWorker) {
   }
   navigator.serviceWorker.register( swlocation);
 }
- */
 
-if( navigator.serviceWorker) {
-  navigator.serviceWorker.register( '/serviceWorker.js' );
-}
+
+// if( navigator.serviceWorker) {
+//   navigator.serviceWorker.register( '/serviceWorker.js' );
+// }
 const staticDevCoffee = "misitio"
 const assets = [
-  "/",
+  //"/",
   "index.html",
   "pages/index-offline.html",
   "css/style.css",
