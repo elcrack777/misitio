@@ -11,12 +11,12 @@ if( navigator.serviceWorker) {
 const staticDevCoffee = "misitio"
 const assets = [
   "/",
-  "/index.html",
-  "/pages/index-offline.html",
-  "/css/style.css",
-  "/js/app.js",
-  "/icon-512x512.png",
-  "/serviceWorker.js",
+  "index.html",
+  "pages/index-offline.html",
+  "css/style.css",
+  "js/app.js",
+  "icon-512x512.png",
+  "serviceWorker.js",
 ]
 
 self.addEventListener("install", installEvent => {
