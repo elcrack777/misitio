@@ -1,10 +1,20 @@
+var url =  window.location.href;
+var swLocation = '/misitio/serviceWorker.js'
+
+if( navigator.serviceWorker) {
+  if(url.includes('localhost')) {
+    swLocation = '/serviceWorker.js';
+  }
+  navigator.serviceWorker.register( swlocation);
+}
+
 const staticDevCoffee = "misitio"
 const assets = [
   "/",
-  "/index.html",
-  "/css/style.css",
-  "/js/app.js",
-  "/icon-512x512.png",
+  "index.html",
+  "css/style.css",
+  "js/app.js",
+  "icon-512x512.png",
 ]
 
 self.addEventListener("install", installEvent => {
