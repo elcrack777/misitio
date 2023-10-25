@@ -1,10 +1,12 @@
 const staticDevCoffee = "misitio"
 const assets = [
   "/",
-  "/index-offline.html",
+  "/index.html",
+  "/pages/index-offline.html",
   "/css/style.css",
   "/js/app.js",
   "/icon-512x512.png",
+  "/serviceWorker.js",
 ]
 
 self.addEventListener("install", installEvent => {
@@ -15,15 +17,11 @@ self.addEventListener("install", installEvent => {
   )
 })
 self.addEventListener("fetch", function(event) {
+  console.log(event);
   event.respondWith(
     fetch(event.request).catch(function() {
-      return caches.match(event.request).then(function(response) {
-        if (response) {
-          return response;
-        } else if (event.request.headers.get("accept").includes("text/html")) {
-          return caches.match("/index-offline.html");
-        }
-      });
+      console.log('fallado el cargado');
+      return caches.match("/pages/index-offline.html");
     })
   );
 });
