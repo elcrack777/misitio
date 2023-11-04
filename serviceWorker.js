@@ -19,6 +19,10 @@ const assets = [
   "pages/index-offline.html",
   "css/style.css",
   "js/app.js",
+  "images/explorer.png",
+  "images/raptor.png",
+  "images/spark.png",
+  "images/vento.png",
   "icon-512x512.png",
   "serviceWorker.js",
 ]
